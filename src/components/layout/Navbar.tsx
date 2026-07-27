@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import Container from "@/src/components/ui/Container";
 import Logo from "@/src/components/layout/Logo";
 import MobileMenu from "@/src/components/layout/MobileMenu";
 import { navigationLinks } from "@/src/data/navigation";
@@ -26,7 +26,7 @@ const links = [
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+      <Container className="flex h-20 items-center justify-between">
         {/* Logo */}
         <Logo />
 
@@ -47,7 +47,7 @@ export default function Navbar() {
         <div className="md:hidden">
           <MobileMenu />
         </div>
-      </div>
+      </Container>
     </header>
   );
 }
