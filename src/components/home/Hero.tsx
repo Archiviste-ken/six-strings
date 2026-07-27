@@ -3,7 +3,7 @@ import { FaGuitar } from "react-icons/fa6";
 
 import HeroVisual from "./HeroVisual";
 
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (

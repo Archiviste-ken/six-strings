@@ -1,9 +1,8 @@
-import Navbar from "@/components/layout/Navbar";
+import Navbar from "@/src/components/layout/Navbar";
 import { Geist } from "next/font/google";
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export default function RootLayout({
   children,

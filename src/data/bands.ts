@@ -1,2 +1,2 @@
-import {Band} from "../../types/band"
+import {Band} from "../types/band"
 
