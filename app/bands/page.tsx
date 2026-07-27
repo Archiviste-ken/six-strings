@@ -1,10 +1,10 @@
 import Container from "@/src/components/ui/Container";
 import SectionHeading from "@/src/components/shared/SectionHeading";
-
 import BandSearch from "@/src/components/bands/BandSearch";
 import GenreFilter from "@/src/components/bands/GenreFilter";
 import SortSelect from "@/src/components/bands/SortSelect";
 import BandGrid from "@/src/components/bands/BandGrid";
+
 
 export default function BandsPage() {
   return (
@@ -20,6 +20,9 @@ export default function BandsPage() {
           <BandSearch />
           <SortSelect />
         </div>
+
+        
+
 
         <div className="mt-6">
           <GenreFilter />
