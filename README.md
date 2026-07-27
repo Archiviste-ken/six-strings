@@ -1,14 +1,18 @@
 # 🤘 Six Strings
 
-> **A modern archive for rock and heavy metal.**
+> **🎸 Legends • 🎶 Riffs • 👑 Legacy**
 
-Built with Next.js, TypeScript, Tailwind CSS, and MongoDB, **Six Strings** is a full-stack web application dedicated to exploring legendary bands, iconic albums, and the stories that shaped rock and heavy metal.
+<p align="center">
+  <img src="./public/six-strings.png" alt="Six Strings Banner" width="100%" />
+</p>
+
+Six Strings is a modern full-stack web application inspired by the bands that defined rock and heavy metal. Built with a focus on clean design, smooth interactions, and scalable architecture, it's where my passion for music meets my passion for building.
 
 ---
 
-## Stack
+## ⚡ Tech Stack
 
--   ▲ Next.js
+- ▲ Next.js
 - 📘 TypeScript
 - 🎨 Tailwind CSS
 - 🍃 MongoDB
@@ -17,14 +21,29 @@ Built with Next.js, TypeScript, Tailwind CSS, and MongoDB, **Six Strings** is a 
 
 ---
 
-## Principles
+## 🎵 What's Inside?
 
-- Clean architecture
-- Thoughtful design
-- Smooth interactions
-- Real-world full-stack development
-- Music first
+```text
+🏠 Home
+
+🔍 Search legendary bands
+
+🎸 Explore band profiles
+
+💿 Browse iconic albums
+
+❤️ Build your favorites
+```
 
 ---
 
-> *Where code meets distortion.*
+
+## 🧠 Principles
+
+- Keep the UI clean.
+- Keep the code scalable.
+- Let the music speak.
+
+---
+
+> *Built with code. Powered by riffs.*
