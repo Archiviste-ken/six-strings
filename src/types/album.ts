@@ -1,13 +1,15 @@
 export interface Album {
   id: number;
-
   title: string;
+  slug: string;
 
   cover: string;
 
   year: number;
 
-  band: string;
+  bandId: number;
 
-  slug: string;
+  genre: string;
+
+  description: string;
 }
