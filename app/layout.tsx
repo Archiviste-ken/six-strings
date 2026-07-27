@@ -1,8 +1,6 @@
-import Navbar from "@/src/components/layout/Navbar";
-import { Geist } from "next/font/google";
-import { cn } from "@/src/lib/utils";
+import "./globals.css";
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
+import Navbar from "@/src/components/layout/Navbar";
 
 export default function RootLayout({
   children,
@@ -10,11 +8,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
-      <body>
+    <html lang="en">
+      <body className="bg-zinc-950 text-white">
         <Navbar />
 
-        <main>{children}</main>
+        {children}
       </body>
     </html>
   );
