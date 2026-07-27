@@ -10,16 +10,16 @@ export default function SectionHeading({
   description,
 }: SectionHeadingProps) {
   return (
-    <div className="mb-14 max-w-2xl">
-      <span className="text-sm font-medium uppercase tracking-[0.25em] text-red-500">
+    <div className="mb-16 max-w-3xl border-t border-[var(--border)] pt-6">
+      <span className="eyebrow">
         {eyebrow}
       </span>
 
-      <h2 className="mt-4 text-4xl font-bold tracking-tight">
+      <h2 className="mt-4 max-w-2xl text-4xl leading-[1.02] md:text-5xl">
         {title}
       </h2>
 
-      <p className="mt-4 text-lg leading-8 text-zinc-400">
+      <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--text-soft)] md:text-lg">
         {description}
       </p>
     </div>

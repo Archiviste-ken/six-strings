@@ -1,32 +1,35 @@
-import Image from "next/image";
-
 import type { Album } from "@/src/types/album";
 
 interface AlbumCardProps {
   album: Album;
+  index: number;
 }
 
-export default function AlbumCard({ album }: AlbumCardProps) {
+export default function AlbumCard({ album, index }: AlbumCardProps) {
   return (
-    <div className="group rounded-2xl border border-zinc-800 bg-zinc-900 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-red-600">
-      <div className="relative aspect-square">
-        <Image
-          src={album.cover}
-          alt={album.title}
-          fill
-          className="object-cover transition duration-500 group-hover:scale-105"
-        />
-      </div>
+    <div className="grid grid-cols-[auto_1fr_auto] items-start gap-x-8 border-b border-[var(--border)] py-6 last:border-b-0">
+      {/* Index */}
+      <span className="mt-1 w-6 text-[0.68rem] tabular-nums text-[var(--text-muted)]">
+        {String(index + 1).padStart(2, "0")}
+      </span>
 
-      <div className="p-5">
-        <h3 className="font-bold text-lg">
+      {/* Title + description */}
+      <div className="min-w-0">
+        <h4 className="font-heading text-2xl leading-tight text-[var(--foreground)]">
           {album.title}
-        </h3>
-
-        <p className="mt-2 text-sm text-zinc-400">
-          {album.year}
+        </h4>
+        <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">
+          {album.description}
+        </p>
+        <p className="mt-2 text-[0.65rem] uppercase tracking-[0.2em] text-[var(--text-muted)]">
+          {album.genre}
         </p>
       </div>
+
+      {/* Year */}
+      <span className="mt-1 font-heading text-2xl tabular-nums text-[var(--text-muted)]">
+        {album.year}
+      </span>
     </div>
   );
 }

@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import type { Band } from "@/src/types/band";
 
 interface BandCardProps {
@@ -13,38 +10,34 @@ export default function BandCard({ band }: BandCardProps) {
   return (
     <Link
       href={`/bands/${band.slug}`}
-      className="group block overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 transition-colors duration-300 hover:border-red-600"
+      data-animate="stagger-item"
+      className="group block overflow-hidden border border-[var(--border)] bg-[var(--card)] transition-colors duration-300 hover:border-[var(--accent)]"
     >
       <div className="relative aspect-[4/5] overflow-hidden">
-        <motion.div
-          className="h-full w-full"
-          whileHover={{
-            y: -8,
-            scale: 1.05,
-          }}
-          transition={{
-            duration: 0.25,
-            ease: "easeOut",
-          }}
+        <div
+          className="h-full w-full transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-105"
         >
           <Image
             src={band.image}
             alt={band.name}
             fill
             className="object-cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
-        </motion.div>
+        </div>
       </div>
 
-      <div className="space-y-3 p-5">
-        <h3 className="text-xl font-bold">{band.name}</h3>
+      <div className="space-y-3 border-t border-[var(--border)] p-5">
+        <h3 className="font-heading text-xl text-[var(--foreground)]">{band.name}</h3>
 
-        <div className="flex items-center justify-between text-sm text-zinc-400">
+        <div className="flex items-center justify-between text-[0.72rem] uppercase tracking-[0.18em] text-[var(--text-muted)]">
           <span>{band.genre}</span>
           <span>{band.country}</span>
         </div>
 
-        <div className="text-sm text-zinc-500">Formed • {band.formed}</div>
+        <div className="text-[0.72rem] uppercase tracking-[0.18em] text-[var(--text-muted)]">
+          Formed · {band.formed}
+        </div>
       </div>
     </Link>
   );

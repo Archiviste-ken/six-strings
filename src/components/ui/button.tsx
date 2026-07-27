@@ -13,20 +13,30 @@ export default function Button({
   variant = "primary",
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center rounded-xl px-6 py-3 font-medium transition-all duration-300";
+    "inline-flex min-h-11 items-center justify-center gap-3 border px-5 py-3 text-[0.76rem] uppercase tracking-[0.22em] transition-colors duration-200";
 
   const styles =
     variant === "primary"
-      ? "bg-red-600 text-white hover:bg-red-700"
-      : "border border-zinc-700 bg-zinc-900 text-white hover:bg-zinc-800";
+      ? "border-[var(--border-strong)] bg-[var(--surface-soft)] text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--foreground)]"
+      : "border-transparent bg-transparent text-[var(--accent)] hover:border-[var(--border)] hover:bg-[var(--accent-soft)]";
 
   if (href) {
     return (
       <Link href={href} className={`${base} ${styles}`}>
         {children}
+        <span aria-hidden="true" className="text-[0.9em]">
+          →
+        </span>
       </Link>
     );
   }
 
-  return <button className={`${base} ${styles}`}>{children}</button>;
+  return (
+    <button className={`${base} ${styles}`}>
+      {children}
+      <span aria-hidden="true" className="text-[0.9em]">
+        →
+      </span>
+    </button>
+  );
 }

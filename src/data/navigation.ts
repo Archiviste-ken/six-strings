@@ -8,8 +8,8 @@ export const navigationLinks = [
     href: "/albums",
   },
   {
-    name: "Favorites",
-    href: "/favorites",
+    name: "Favourites",
+    href: "/favourites",
   },
   {
     name: "About",

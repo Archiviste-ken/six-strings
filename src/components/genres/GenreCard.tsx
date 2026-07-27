@@ -10,17 +10,17 @@ export default function GenreCard({ genre }: GenreCardProps) {
   return (
     <Link
       href={`/genres/${genre.slug}`}
-      className="group rounded-2xl border border-zinc-800 bg-zinc-900 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-red-600"
+      className="group block border border-[var(--border)] bg-[var(--card)] p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)]"
     >
-      <div className="text-4xl">{genre.icon}</div>
+      <div className="text-3xl">{genre.icon}</div>
 
-      <h3 className="mt-5 text-xl font-bold">{genre.name}</h3>
+      <h3 className="mt-5 font-heading text-xl text-[var(--foreground)]">{genre.name}</h3>
 
-      <p className="mt-2 text-sm text-zinc-400">
+      <p className="mt-2 text-sm leading-6 text-[var(--text-soft)]">
         {genre.description}
       </p>
 
-      <p className="mt-6 text-sm font-medium text-red-500">
+      <p className="mt-6 text-[0.7rem] uppercase tracking-[0.2em] text-[var(--accent)]">
         {genre.bandCount} Bands
       </p>
     </Link>

@@ -1,49 +1,48 @@
+"use client";
+
+import { useRef } from "react";
 import Link from "next/link";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import Container from "@/src/components/ui/Container";
 import Logo from "@/src/components/layout/Logo";
 import MobileMenu from "@/src/components/layout/MobileMenu";
 import { navigationLinks } from "@/src/data/navigation";
 
-const links = [
-  {
-    name: "Bands",
-    href: "/bands",
-  },
-  {
-    name: "Albums",
-    href: "/albums",
-  },
-  {
-    name: "Favorites",
-    href: "/favorites",
-  },
-  {
-    name: "About",
-    href: "/about",
-  },
-];
-
 export default function Navbar() {
+  const navRef = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      // Subtle top-down drop-in on load
+      gsap.from(navRef.current, {
+        y: "-100%",
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        delay: 0.1,
+      });
+    },
+    { scope: navRef }
+  );
+
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-xl">
-      <Container className="flex h-20 items-center justify-between">
-        {/* Logo */}
+    <header ref={navRef} className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--bg-overlay-strong)] backdrop-blur-xl">
+      <Container className="flex min-h-20 items-center justify-between gap-6 py-4">
         <Logo />
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav aria-label="Main navigation" className="hidden items-center gap-7 md:flex">
           {navigationLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-white"
+              className="border-b border-transparent pb-1 text-[0.7rem] uppercase tracking-[0.24em] text-[var(--text-muted)] transition-colors duration-200 hover:border-[var(--accent)] hover:text-[var(--foreground)]"
             >
               {link.name}
             </Link>
           ))}
         </nav>
 
-        {/* Mobile Navigation */}
         <div className="md:hidden">
           <MobileMenu />
         </div>

@@ -1,17 +1,21 @@
 import { Search } from "lucide-react";
+import Input from "@/src/components/ui/Input";
 
 export default function BandSearch() {
   return (
     <div className="relative w-full max-w-md">
+      <label htmlFor="band-search" className="sr-only">Search bands</label>
       <Search
-        size={18}
-        className="absolute top-1/2 left-4 -translate-y-1/2 text-zinc-500"
+        size={16}
+        className="absolute top-1/2 left-4 -translate-y-1/2 text-[var(--text-muted)]"
+        strokeWidth={1.5}
+        aria-hidden="true"
       />
-
-      <input
+      <Input
+        id="band-search"
         type="text"
-        placeholder="Search bands..."
-        className="w-full rounded-xl border border-zinc-800 bg-zinc-900 py-3 pr-4 pl-11 outline-none transition focus:border-red-500"
+        placeholder="Search bands…"
+        className="pl-11"
       />
     </div>
   );
