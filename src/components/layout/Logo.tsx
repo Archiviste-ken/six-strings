@@ -4,7 +4,7 @@ export default function Logo() {
   return (
     <Link
       href="/"
-      className="text-2xl font-bold tracking-tight transition hover:opacity-80"
+      className="text-2xl font-black tracking-tight text-white transition hover:text-red-500"
     >
       🤘 Six Strings
     </Link>
