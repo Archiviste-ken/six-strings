@@ -3,6 +3,7 @@ import AlbumGrid from "@/src/components/albums/AlbumGrid";
 import BandHero from "@/src/components/bands/BandHero";
 import BandInfo from "@/src/components/bands/BandInfo";
 import { bands } from "@/src/data/bands";
+import SimilarBands from "@/src/components/bands/SimilarBands";
 
 export async function generateStaticParams() {
   return bands.map((band) => ({
@@ -30,6 +31,7 @@ export default async function BandPage({ params }: PageProps) {
       <BandHero band={band} />
       <BandInfo band={band} />
       <AlbumGrid band={band} />
+      <SimilarBands band={band} />
     </main>
   );
 }
